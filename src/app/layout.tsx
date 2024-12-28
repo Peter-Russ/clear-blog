@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local'
 import './globals.css';
+import Header from '@/components/shared/Header';
+
 
 const geist = localFont({
   src: [
@@ -29,8 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" >
-      <body className={`${geist.className} antialiased`}>
+      <body className={`${geist.className} bg-background antialiased min-h-dvh`}>
+        <Header />
+        {/* nav */}
         {children}
+        {/* footer */}
       </body>
     </html >
   );
